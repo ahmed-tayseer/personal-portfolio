@@ -137,3 +137,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+/////////////////////////////////////
+// for development
+navigationLinks.forEach(btn => {
+  if (btn.innerText.toLowerCase() === 'resume') btn.click();
+});
