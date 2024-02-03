@@ -764,7 +764,8 @@ main {
   margin-bottom: 10px;
 }
 
-.modal-content p {
+/* .modal-content p, */
+.modal-content {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
@@ -1014,6 +1015,7 @@ main {
 }
 
 .project-item.active {
+  cursor: pointer;
   display: block;
   animation: scaleUp 0.25s ease forwards;
 }
@@ -1681,6 +1683,20 @@ textarea.form-input::-webkit-resizer {
   .form-btn ion-icon {
     font-size: 18px;
   }
+
+  /* Added */
+  .my-modal {
+    max-width: 620px;
+  }
+  .project-img.my img {
+    max-height: 350px;
+  }
+  .form-btn.link-fill ion-icon,
+  .form-btn.link-out ion-icon {
+    /* stroke-width: 50px; */
+    --ionicon-stroke-width: 50px;
+    font-size: 20px;
+  }
 }
 
 /**
@@ -1786,6 +1802,13 @@ textarea.form-input::-webkit-resizer {
   .form-btn {
     width: max-content;
     margin-left: auto;
+  }
+
+  /* Added */
+  .form-btn.link-fill,
+  .form-btn.link-out {
+    width: 160px;
+    margin-left: 0;
   }
 }
 
@@ -2035,7 +2058,115 @@ textarea.form-input::-webkit-resizer {
   }
 }
 
+/***********************************/
 /* Added styles */
 .skills-list.content-card {
   cursor: auto;
+}
+/*******************************/
+.my-modal {
+  position: fixed;
+  /* top: 0;
+  left: 0; */
+  width: 90%;
+  height: 94%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 20;
+  pointer-events: none;
+  visibility: hidden;
+
+  background: var(--eerie-black-2);
+  padding: 15px;
+  /* margin: 15px 12px; */
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-5);
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.my-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.my-modal.active {
+  pointer-events: all;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.my-modal time {
+  margin-bottom: 0;
+}
+
+.my-modal.active .testimonials-modal {
+  /* transform: scale(1);
+  opacity: 1; */
+}
+/*******************************/
+/* modal for projects */
+.testimonials-modal.my {
+  /* padding-top: 62px; */
+  /* margin: 15px 0px; */
+}
+
+.modal-container.my {
+  display: block;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; */
+}
+.overlay.my {
+  z-index: 6;
+  /* background: #fff; */
+  /* position: fixed; */
+}
+/* ********************************* */
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -4px;
+  margin-bottom: 6px;
+}
+.tool {
+  padding: 6px 12px;
+  margin-top: 10px;
+  margin-right: 10px;
+  /* font-size: 16px; */
+  /* background: rgba(153, 153, 153, 0.2); */
+  /* background: var(--smoky-black); */
+  background: var(--bg-gradient-onyx);
+  /* background: var(--bg-gradient-jet); */
+  border-radius: 14px;
+  font-weight: 500;
+  /* color: #777; */
+}
+
+.btn-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 13px;
+}
+
+.form-btn.link-out {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--light-gray);
+}
+.form-btn.link-fill {
+  font-weight: 500;
+  text-transform: uppercase;
 }

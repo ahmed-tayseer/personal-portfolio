@@ -440,7 +440,7 @@
           <section class="timeline">
             <div class="title-wrapper">
               <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+                <ion-icon name="bag-outline"></ion-icon>
               </div>
 
               <h3 class="h3">Work Experience</h3>
@@ -657,29 +657,27 @@
               </ul>
             </div>
 
-            <ul class="project-list">
+            <ul class="project-list" data-projects-container>
               <li
                 class="project-item active"
                 data-filter-item
                 data-category="web development"
               >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-                    <img
-                      src="./assets/images/project-1.jpg"
-                      alt="finance"
-                      loading="lazy"
-                    />
-                  </figure>
+                  <img
+                    src="./assets/images/project-1.jpg"
+                    alt="finance"
+                    loading="lazy"
+                  />
+                </figure>
 
-                  <h3 class="project-title">Finance</h3>
+                <h3 class="project-title">Finance</h3>
 
-                  <p class="project-category">Web development</p>
-                </a>
+                <p class="project-category">Web development</p>
               </li>
 
               <li
@@ -687,23 +685,21 @@
                 data-filter-item
                 data-category="web development"
               >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-                    <img
-                      src="./assets/images/project-2.png"
-                      alt="orizon"
-                      loading="lazy"
-                    />
-                  </figure>
+                  <img
+                    src="./assets/images/project-2.png"
+                    alt="orizon"
+                    loading="lazy"
+                  />
+                </figure>
 
-                  <h3 class="project-title">Orizon</h3>
+                <h3 class="project-title">Orizon</h3>
 
-                  <p class="project-category">Web development</p>
-                </a>
+                <p class="project-category">Web development</p>
               </li>
 
               <li
@@ -1132,6 +1128,89 @@
             </form>
           </section>
         </article>
+      </div>
+
+      <!--
+          - projects modal
+        -->
+
+      <div class="overlay my" data-overlay></div>
+      <!-- <div class="modal-container my" data-modal-container> -->
+      <div class="my-modal" data-modal-container>
+        <!-- <section class="testimonials-modal my"> -->
+        <h4 class="h2 article-title">Project Name</h4>
+
+        <button class="modal-close-btn" data-modal-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <!-- <div class="modal-img-wrapper"> -->
+        <figure class="project-img my">
+          <img
+            src="./assets/images/project-2.png"
+            alt="arrival"
+            loading="lazy"
+          />
+        </figure>
+
+        <!-- <img src="./assets/images/icon-quote.svg" alt="quote icon" /> -->
+        <!-- </div> -->
+
+        <div class="modal-content">
+          <h4 class="h3 modal-title">Description</h4>
+          <time datetime="2021-06-14">June 2021</time>
+
+          <div class="project-content">
+            <div class="project-description">
+              <p>Richard was hired to create a corporate identity. We were</p>
+              <ul class="timeline-text-list">
+                <!-- prettier-ignore -->
+                <li>Planned the project by making user stories, features &
+                    flowchart.</li>
+
+                <!-- prettier-ignore -->
+                <li>Implemented with MVC architecture using
+                    modules, classes, and Publisher Subscriber Pattern.</li>
+
+                <li>Fetched needed data from online API.</li>
+
+                <!-- prettier-ignore -->
+                <li>Used Parcel bundler for transpiling, polyfilling and dead code.</li>
+              </ul>
+            </div>
+            <div class="project-tools">
+              <h4 class="h3 modal-title">Tools Used</h4>
+              <div class="tools">
+                <div class="tool">HTML</div>
+                <div class="tool">CSS</div>
+                <div class="tool">JavaScript</div>
+                <div class="tool">React</div>
+                <div class="tool">SASS</div>
+                <div class="tool">GIT</div>
+                <div class="tool">Shopify</div>
+                <div class="tool">Wordpress</div>
+                <div class="tool">Google ADS</div>
+                <div class="tool">Facebook Ads</div>
+                <div class="tool">Android</div>
+                <div class="tool">IOS</div>
+              </div>
+            </div>
+            <div class="product-links">
+              <h4 class="h3 modal-title" data-modal-title>See Live</h4>
+              <div class="btn-links">
+                <a href="#" target="_blank" class="form-btn link-fill">
+                  <ion-icon name="eye-outline"></ion-icon>
+                  <span>live link</span>
+                </a>
+                <a href="#" target="_blank" class="form-btn link-out">
+                  <ion-icon name="code-working"></ion-icon>
+                  <span>code link</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- </section> -->
       </div>
     </main>
 

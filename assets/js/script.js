@@ -138,7 +138,40 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 /////////////////////////////////////
+// Open project
+
+// const portfolio = document.querySelector('[data-page="portfolio"]');
+// const overlayProjects = portfolio.querySelector('[data-overlay]');
+
+const projectsContainer = document.querySelector('[data-projects-container]');
+// const modalProjectsContainer = document.querySelector('.modal-container.my');
+const modalProjectsContainer = document.querySelector('.my-modal');
+const overlayProjects = document.querySelector('.overlay.my');
+
+const modalProjectsCloseBtn = modalProjectsContainer.querySelector(
+  '[data-modal-close-btn]'
+);
+
+// modal toggle function
+const projectsModalFunc = function () {
+  modalProjectsContainer.classList.toggle('active');
+  overlayProjects.classList.toggle('active');
+};
+
+modalProjectsCloseBtn.addEventListener('click', projectsModalFunc);
+overlayProjects.addEventListener('click', projectsModalFunc);
+
+projectsContainer.addEventListener('click', function (e) {
+  const project = e.target.closest('[data-filter-item]');
+  if (!project) return;
+
+  // open modal
+  projectsModalFunc();
+});
+/////////////////////////////////////
 // for development
 navigationLinks.forEach(btn => {
-  if (btn.innerText.toLowerCase() === 'resume') btn.click();
+  if (btn.innerText.toLowerCase() === 'portfolio') btn.click();
 });
+modalProjectsContainer.classList.toggle('active');
+overlayProjects.classList.toggle('active');
