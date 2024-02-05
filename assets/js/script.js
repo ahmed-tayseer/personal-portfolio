@@ -1,5 +1,94 @@
 'use strict';
 
+// My projects data
+const ecommerceProject = {
+  name: 'Ecommerce Website',
+  type: 'Website',
+  date: 'May 2022',
+  description: [
+    'I conceptualized, designed, and developed an eCommerce website with user accounts for both customers and merchants. Customers can browse, purchase, add items to the cart, and view their purchase history. Merchants have the capability to showcase and edit their products, as well as monitor their earnings.',
+    'Additionally, I designed the flowchart and user interfaces for the website, ensuring a seamless and intuitive user experience. For the database structure, I created an Entity-Relationship Diagram (ERD) and implemented it using MySQL. Finally, I rigorously implemented and tested each backend module using Flask.',
+  ],
+  shortDescription: '',
+  bullets: [
+    'Planned, designed and built the webpage.',
+    'Resulting in a responsive design achieved through a desktop-first development approach.',
+    'Debugged and optimized the webpage according to accessibility, image dimensions.',
+    'Verified that the website functions seamlessly across all major browsers.',
+  ],
+  image: '',
+  tools: ['HTML', 'CSS', 'JavaScript', 'Flask', 'SQL', 'MySQL', 'GIT'],
+  liveLink: '',
+  codeLink: '',
+};
+const project1 = {
+  name: 'Omnifood Webpage',
+  type: 'Responsive Webpage',
+  date: 'Nov 2023',
+  description: [
+    // First one is a longer short description with
+    'I conceptualized, designed, and developed a marketing page for a company specializing in healthy diets. The page features sections showcasing details such as an overview, testimonials, pricing, and a signup form.',
+    'To begin, I meticulously planned, designed, and built the webpage, ensuring a cohesive and visually appealing layout. I prioritized responsiveness by adopting a desktop-first development approach, making the webpage accessible across various devices.',
+    'Additionally, I meticulously debugged and optimized the webpage, addressing issues related to accessibility and image dimensions to enhance user experience. Finally, I conducted thorough testing to ensure the website functions seamlessly across all major browsers, guaranteeing maximum reach and usability',
+  ],
+  shortDescription:
+    'Simulation for a marketing page for a company providing healthy diets.',
+  bullets: [
+    'Planned, designed and built the webpage.',
+    'Resulting in a responsive design achieved through a desktop-first development approach.',
+    'Debugged and optimized the webpage according to accessibility, image dimensions.',
+    'Verified that the website functions seamlessly across all major browsers.',
+  ],
+  image: '',
+  tools: ['HTML', 'CSS', 'JavaScript', 'GIT'],
+  liveLink: 'https://omnifood-tayseer.netlify.app/',
+  codeLink: 'https://github.com/ahmedtayseer303/Omnifood-Project',
+};
+
+const project2 = {
+  name: 'Matpy Application',
+  type: 'JavaScript Application',
+  date: 'Dec 2023',
+  description: [
+    "An application for logging workouts, allowing users to track their exercises and visualize them on a map. The app stores workout data locally for each user in the browser's local storage.",
+    "To start, I carefully planned the project by outlining user stories, defining features, and creating a flowchart to guide development. I then implemented the application's architecture using Object-Oriented Programming (OOP) principles to ensure scalability and maintainability.",
+    'For mapping functionality, I integrated a third-party package to provide map visualization features, enhancing the user experience and adding value to the application.',
+  ],
+  shortDescription:
+    'Log your workouts all in one place and trace them on the map.',
+  bullets: [
+    'Planned the project by making user stories, features, & flowchart.',
+    'Implemented the architecture using OOP.',
+    'Used map as 3rd party package.',
+  ],
+  image: '',
+  tools: ['HTML', 'CSS', 'JavaScript', 'NPM', 'OOP', '3rd party (map)'],
+  liveLink: 'https://matpy-tayseer.netlify.app/',
+  codeLink: 'https://github.com/ahmedtayseer303/Matpy-Project',
+};
+
+const project3 = {
+  name: 'Forkify Application',
+  type: 'JavaScript Application',
+  date: 'Jan 2024',
+  description: [
+    'A recipe application that allows users to search for recipes, bookmark their favorites, and even upload their own recipes while ensuring all their data is securely stored.',
+    'To begin, I meticulously planned the project by defining user stories, outlining features, and creating a flowchart to guide development. The application was implemented using the Model-View-Controller (MVC) architecture, employing modules, classes, and the Publisher-Subscriber Pattern to organize and manage the codebase effectively.',
+    "For data retrieval, I integrated an online API to fetch the necessary recipe information. Additionally, I utilized the Parcel bundler to transpile, polyfill, and eliminate dead code, optimizing the application's performance and ensuring compatibility across different environments.",
+  ],
+  shortDescription: 'Recipe application with custom recipe uploads.',
+  bullets: [
+    'Planned the project by making user stories, features & flowchart.',
+    'Implemented with MVC architecture using modules, classes, and Publisher Subscriber Pattern.',
+    'Fetched needed data from online API.',
+    'Used Parcel bundler for transpiling, polyfilling and dead code.',
+  ],
+  image: '',
+  tools: ['HTML', 'CSS', 'JavaScript', 'NPM', 'MVC', 'OOP', 'APIs', 'Bundler'],
+  liveLink: 'https://forkify-v2.netlify.app/',
+  codeLink: 'https://github.com/ahmedtayseer303/forkify-project',
+};
+
 // element toggle function
 const elementToggleFunc = function (elem) {
   elem.classList.toggle('active');
@@ -138,13 +227,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 /////////////////////////////////////
-// Open project
-
-// const portfolio = document.querySelector('[data-page="portfolio"]');
-// const overlayProjects = portfolio.querySelector('[data-overlay]');
+// Open project modal
 
 const projectsContainer = document.querySelector('[data-projects-container]');
-// const modalProjectsContainer = document.querySelector('.modal-container.my');
 const modalProjectsContainer = document.querySelector('.my-modal');
 const overlayProjects = document.querySelector('.overlay.my');
 
@@ -162,16 +247,58 @@ modalProjectsCloseBtn.addEventListener('click', projectsModalFunc);
 overlayProjects.addEventListener('click', projectsModalFunc);
 
 projectsContainer.addEventListener('click', function (e) {
-  const project = e.target.closest('[data-filter-item]');
+  const project = e.target.closest('[data-details-btn]');
   if (!project) return;
 
   // open modal
   projectsModalFunc();
 });
 /////////////////////////////////////
-// for development
-navigationLinks.forEach(btn => {
-  if (btn.innerText.toLowerCase() === 'portfolio') btn.click();
+// Contact form submition
+const formMessage = form.querySelector('.form-message');
+const formDate = document.querySelector('[data-form-input-date]');
+
+const options = {
+  hour: 'numeric',
+  minute: 'numeric',
+  day: 'numeric',
+  month: 'numeric',
+  year: 'numeric',
+};
+
+const scriptURL =
+  'https://script.google.com/macros/s/AKfycbycrbph_L7syUO-kc4VqT9wpb2TRVlPMolDpBzvXMzZoAdDdK-1up00IToFw4N883iVfQ/exec';
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  formDate.value = new Intl.DateTimeFormat('en-US', options).format(new Date());
+  formMessage.style.display = 'block';
+  formMessage.innerHTML = 'Sending the message...';
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      formMessage.innerHTML = '✔ Thank you! Message sent successfully.';
+    })
+    .catch(error => {
+      formMessage.innerHTML =
+        "🔴 An error happend. if it's repeated then your message was sent.";
+    })
+    .finally(() => {
+      form.reset();
+      setTimeout(() => {
+        formMessage.style.display = 'none';
+      }, 5000);
+    });
 });
-modalProjectsContainer.classList.toggle('active');
-overlayProjects.classList.toggle('active');
+/////////////////////////////////////
+// for development
+// setTimeout(() => {
+//   formMessage.style.display = 'block';
+// }, 2000);
+
+// formMessage.style.display = 'block';
+// formMessage.innerHTML = '✔ Thank you! Your message has been sent successfully.';
+navigationLinks.forEach(btn => {
+  if (btn.innerText.toLowerCase() === 'resume') btn.click();
+});
+// modalProjectsContainer.classList.toggle('active');
+// overlayProjects.classList.toggle('active');

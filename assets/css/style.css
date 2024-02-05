@@ -1015,6 +1015,7 @@ main {
 }
 
 .project-item.active {
+  position: relative;
   cursor: pointer;
   display: block;
   animation: scaleUp 0.25s ease forwards;
@@ -1333,6 +1334,166 @@ textarea.form-input::-webkit-resizer {
   background: var(--bg-gradient-jet);
 }
 
+/***********************************/
+/* Added styles */
+
+/* resume download btn */
+.resume {
+  position: relative;
+}
+.form-btn.resume-download {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  width: auto;
+  margin-left: auto;
+}
+.form-btn.resume-download ion-icon {
+  font-size: 23px;
+  margin-top: -4px;
+}
+.form-btn.resume-download span {
+  display: none;
+}
+
+/* mouse on skill not pointer */
+.skills-list.content-card {
+  cursor: auto;
+}
+
+/* new modal for projects */
+.my-modal {
+  position: fixed;
+  /* top: 0;
+  left: 0; */
+  width: 90%;
+  height: 94%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 20;
+  pointer-events: none;
+  visibility: hidden;
+
+  background: var(--eerie-black-2);
+  padding: 15px;
+  /* margin: 15px 12px; */
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-5);
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.my-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.my-modal.active {
+  pointer-events: all;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.my-modal time {
+  margin-bottom: 0;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -4px;
+  margin-bottom: 6px;
+}
+.tool {
+  padding: 6px 12px;
+  margin-top: 10px;
+  margin-right: 10px;
+  /* font-size: 16px; */
+  /* background: rgba(153, 153, 153, 0.2); */
+  /* background: var(--smoky-black); */
+  background: var(--bg-gradient-onyx);
+  /* background: var(--bg-gradient-jet); */
+  border-radius: 14px;
+  font-weight: 500;
+  /* color: #777; */
+}
+
+.btn-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 13px;
+}
+
+.form-btn.link-out {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--light-gray);
+}
+.form-btn.link-fill {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* details btn to open the new projects modal */
+.project-details-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--orange-yellow-crayola);
+  color: var(--white-2);
+  /* font-size: 24px; */
+  /* background: var(--jet); */
+  /* background: var(--eerie-black-1); */
+  /* background: var(--border-gradient-onyx); */
+  /* background: none; */
+  border-radius: 8px;
+  /* border: 1px solid var(--light-gray-70); */
+  border: none;
+}
+.project-details-btn svg {
+  width: 27px;
+  height: 27px;
+}
+
+.project-details-btn:hover {
+  background: var(--jet);
+}
+
+/* change the width of the project title due to the details btn */
+.project-title,
+.project-category {
+  width: 82%;
+}
+
+/* form btn with success message */
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-message {
+  display: none;
+  font-size: var(--fs-6);
+  color: var(--orange-yellow-crayola);
+}
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
@@ -1357,6 +1518,12 @@ textarea.form-input::-webkit-resizer {
   .project-img,
   .blog-banner-box {
     height: auto;
+  }
+
+  /* Added styles*/
+  /* Resume btn */
+  .form-btn.resume-download span {
+    display: block;
   }
 }
 
@@ -1684,7 +1851,14 @@ textarea.form-input::-webkit-resizer {
     font-size: 18px;
   }
 
-  /* Added */
+  /* Added styles*/
+  /* Resume btn */
+  .form-btn.resume-download {
+    top: 31px;
+    right: 30px;
+  }
+
+  /* projects modal */
   .my-modal {
     max-width: 620px;
   }
@@ -1805,9 +1979,25 @@ textarea.form-input::-webkit-resizer {
   }
 
   /* Added */
+  /* projects modal */
+  .my-modal.active,
+  .project-img.my {
+    border-radius: 20px;
+  }
   .form-btn.link-fill,
   .form-btn.link-out {
     width: 160px;
+    margin-left: 0;
+  }
+
+  /* form btn with success message */
+  .submit-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 45px;
+  }
+  .submit-container .form-btn {
     margin-left: 0;
   }
 }
@@ -1917,6 +2107,12 @@ textarea.form-input::-webkit-resizer {
 
   .blog-banner-box {
     height: 230px;
+  }
+
+  /* Added styles*/
+  /* Resume btn */
+  .form-btn.resume-download {
+    top: 125px;
   }
 }
 
@@ -2058,57 +2254,32 @@ textarea.form-input::-webkit-resizer {
   }
 }
 
-/***********************************/
-/* Added styles */
-.skills-list.content-card {
-  cursor: auto;
-}
-/*******************************/
-.my-modal {
-  position: fixed;
-  /* top: 0;
-  left: 0; */
-  width: 90%;
-  height: 94%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.2);
+/* *********************************** */
+/* .project-details-btn2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  z-index: 20;
-  pointer-events: none;
-  visibility: hidden;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  background: var(--eerie-black-2);
-  padding: 15px;
-  /* margin: 15px 12px; */
-  border: 1px solid var(--jet);
-  border-radius: 14px;
-  box-shadow: var(--shadow-5);
-  opacity: 0;
-  transition: var(--transition-1);
+  border: none;
+  color: var(--white-2);
 }
+.project-details-btn2 svg {
+  width: 28px;
+  height: 28px;
+} */
 
-.my-modal::-webkit-scrollbar {
-  display: none;
-}
-
-.my-modal.active {
-  pointer-events: all;
-  visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-.my-modal time {
-  margin-bottom: 0;
-}
-
+/* ********************************* */
+/* old implementation for modal */
 .my-modal.active .testimonials-modal {
   /* transform: scale(1);
   opacity: 1; */
 }
-/*******************************/
 /* modal for projects */
 .testimonials-modal.my {
   /* padding-top: 62px; */
@@ -2128,45 +2299,3 @@ textarea.form-input::-webkit-resizer {
   /* position: fixed; */
 }
 /* ********************************* */
-
-.project-content {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.tools {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: -4px;
-  margin-bottom: 6px;
-}
-.tool {
-  padding: 6px 12px;
-  margin-top: 10px;
-  margin-right: 10px;
-  /* font-size: 16px; */
-  /* background: rgba(153, 153, 153, 0.2); */
-  /* background: var(--smoky-black); */
-  background: var(--bg-gradient-onyx);
-  /* background: var(--bg-gradient-jet); */
-  border-radius: 14px;
-  font-weight: 500;
-  /* color: #777; */
-}
-
-.btn-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 13px;
-}
-
-.form-btn.link-out {
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--light-gray);
-}
-.form-btn.link-fill {
-  font-weight: 500;
-  text-transform: uppercase;
-}

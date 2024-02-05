@@ -171,10 +171,6 @@
             </li>
 
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Blog</button>
-            </li>
-
-            <li class="navbar-item">
               <button class="navbar-link" data-nav-link>Contact</button>
             </li>
           </ul>
@@ -412,6 +408,16 @@
             <h2 class="h2 article-title">Resume</h2>
           </header>
 
+          <!-- Added resume download btn -->
+          <a
+            href="CV_Ahmed Tayseer.pdf"
+            download="CV_Ahmed Tayseer.pdf"
+            class="form-btn resume-download"
+          >
+            <ion-icon name="download-outline"></ion-icon>
+            <!-- <ion-icon name="arrow-down-circle-outline"></ion-icon> -->
+            <span>download resume</span>
+          </a>
           <section class="timeline">
             <div class="title-wrapper">
               <div class="icon-box">
@@ -440,7 +446,7 @@
           <section class="timeline">
             <div class="title-wrapper">
               <div class="icon-box">
-                <ion-icon name="bag-outline"></ion-icon>
+                <ion-icon name="briefcase-outline"></ion-icon>
               </div>
 
               <h3 class="h3">Work Experience</h3>
@@ -473,7 +479,7 @@
               </li>
 
               <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Matpy Application</h4>
+                <h4 class="h4 timeline-item-title">Mapty Application</h4>
 
                 <span>Dec 2023</span>
 
@@ -663,21 +669,40 @@
                 data-filter-item
                 data-category="web development"
               >
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                <a href="#">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-                  <img
-                    src="./assets/images/project-1.jpg"
-                    alt="finance"
-                    loading="lazy"
-                  />
-                </figure>
+                    <img
+                      src="./assets/images/project-1.jpg"
+                      alt="finance"
+                      loading="lazy"
+                    />
+                  </figure>
 
-                <h3 class="project-title">Finance</h3>
+                  <h3 class="project-title">Finance</h3>
 
-                <p class="project-category">Web development</p>
+                  <p class="project-category">Web development</p>
+                </a>
+
+                <button class="project-details-btn" data-details-btn>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                    />
+                  </svg>
+                </button>
               </li>
 
               <li
@@ -685,21 +710,40 @@
                 data-filter-item
                 data-category="web development"
               >
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                <a href="#">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-                  <img
-                    src="./assets/images/project-2.png"
-                    alt="orizon"
-                    loading="lazy"
-                  />
-                </figure>
+                    <img
+                      src="./assets/images/project-2.png"
+                      alt="orizon"
+                      loading="lazy"
+                    />
+                  </figure>
 
-                <h3 class="project-title">Orizon</h3>
+                  <h3 class="project-title">Orizon</h3>
 
-                <p class="project-category">Web development</p>
+                  <p class="project-category">Web development</p>
+                </a>
+
+                <button class="project-details-btn" data-details-btn>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                    />
+                  </svg>
+                </button>
               </li>
 
               <li
@@ -874,202 +918,6 @@
         </article>
 
         <!--
-        - #BLOG
-      -->
-
-        <article class="blog" data-page="blog">
-          <header>
-            <h2 class="h2 article-title">Blog</h2>
-          </header>
-
-          <section class="blog-posts">
-            <ul class="blog-posts-list">
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-1.jpg"
-                      alt="Design conferences in 2022"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      Design conferences in 2022
-                    </h3>
-
-                    <p class="blog-text">
-                      Veritatis et quasi architecto beatae vitae dicta sunt,
-                      explicabo.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-2.jpg"
-                      alt="Best fonts every designer"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      Best fonts every designer
-                    </h3>
-
-                    <p class="blog-text">
-                      Sed ut perspiciatis, nam libero tempore, cum soluta nobis
-                      est eligendi.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-3.jpg"
-                      alt="Design digest #80"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                    <p class="blog-text">
-                      Excepteur sint occaecat cupidatat no proident, quis
-                      nostrum exercitationem ullam corporis suscipit.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-4.jpg"
-                      alt="UI interactions of the week"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      UI interactions of the week
-                    </h3>
-
-                    <p class="blog-text">
-                      Enim ad minim veniam, consectetur adipiscing elit, quis
-                      nostrud exercitation ullamco laboris nisi.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-5.jpg"
-                      alt="The forgotten art of spacing"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      The forgotten art of spacing
-                    </h3>
-
-                    <p class="blog-text">
-                      Maxime placeat, sed do eiusmod tempor incididunt ut labore
-                      et dolore magna aliqua.
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li class="blog-post-item">
-                <a href="#">
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-6.jpg"
-                      alt="Design digest #79"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Design</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2022-02-23">Fab 23, 2022</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                    <p class="blog-text">
-                      Optio cumque nihil impedit uo minus quod maxime placeat,
-                      velit esse cillum.
-                    </p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </article>
-
-        <!--
         - #CONTACT
       -->
 
@@ -1081,7 +929,7 @@
           <section class="mapbox" data-mapbox>
             <figure>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.61197058033!2d31.175890932416575!3d30.059611235709767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1707034687207!5m2!1sen!2seg"
                 width="400"
                 height="300"
                 loading="lazy"
@@ -1094,9 +942,11 @@
 
             <form action="#" class="form" data-form>
               <div class="input-wrapper">
+                <input type="hidden" name="Date" data-form-input-date />
+
                 <input
                   type="text"
-                  name="fullname"
+                  name="Name"
                   class="form-input"
                   placeholder="Full name"
                   required
@@ -1105,7 +955,7 @@
 
                 <input
                   type="email"
-                  name="email"
+                  name="Email"
                   class="form-input"
                   placeholder="Email address"
                   required
@@ -1114,17 +964,20 @@
               </div>
 
               <textarea
-                name="message"
+                name="Message"
                 class="form-input"
                 placeholder="Your Message"
                 required
                 data-form-input
               ></textarea>
 
-              <button class="form-btn" type="submit" disabled data-form-btn>
-                <ion-icon name="paper-plane"></ion-icon>
-                <span>Send Message</span>
-              </button>
+              <div class="submit-container">
+                <span class="form-message"></span>
+                <button class="form-btn" type="submit" disabled data-form-btn>
+                  <ion-icon name="paper-plane"></ion-icon>
+                  <span>Send Message</span>
+                </button>
+              </div>
             </form>
           </section>
         </article>
@@ -1157,7 +1010,7 @@
         <!-- </div> -->
 
         <div class="modal-content">
-          <h4 class="h3 modal-title">Description</h4>
+          <h4 class="h3 modal-title">Project Overview</h4>
           <time datetime="2021-06-14">June 2021</time>
 
           <div class="project-content">
@@ -1203,7 +1056,7 @@
                   <span>live link</span>
                 </a>
                 <a href="#" target="_blank" class="form-btn link-out">
-                  <ion-icon name="code-working"></ion-icon>
+                  <ion-icon name="logo-github"></ion-icon>
                   <span>code link</span>
                 </a>
               </div>
