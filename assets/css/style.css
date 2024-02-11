@@ -1367,7 +1367,7 @@ textarea.form-input::-webkit-resizer {
   /* top: 0;
   left: 0; */
   width: 90%;
-  height: 94%;
+  max-height: 94%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1.2);
@@ -1407,15 +1407,18 @@ textarea.form-input::-webkit-resizer {
   flex-direction: column;
   gap: 15px;
 }
+.project-description p:not(:last-of-type) {
+  margin-bottom: 15px;
+}
 
 .tools {
+  color: var(--light-gray);
   display: flex;
   flex-wrap: wrap;
-  margin-top: -4px;
-  margin-bottom: 6px;
+  margin-top: -10px;
 }
 .tool {
-  padding: 6px 12px;
+  padding: 10px 20px;
   margin-top: 10px;
   margin-right: 10px;
   /* font-size: 16px; */
@@ -1423,9 +1426,17 @@ textarea.form-input::-webkit-resizer {
   /* background: var(--smoky-black); */
   background: var(--bg-gradient-onyx);
   /* background: var(--bg-gradient-jet); */
-  border-radius: 14px;
+  border-radius: 12px;
   font-weight: 500;
   /* color: #777; */
+}
+
+.project-tools {
+  margin-top: -4px;
+  margin-bottom: 6px;
+}
+.about-tools .tool {
+  font-size: 15px;
 }
 
 .btn-links {
@@ -1458,7 +1469,7 @@ textarea.form-input::-webkit-resizer {
 
   color: var(--orange-yellow-crayola);
   color: var(--white-2);
-  /* font-size: 24px; */
+  font-size: 26px;
   /* background: var(--jet); */
   /* background: var(--eerie-black-1); */
   /* background: var(--border-gradient-onyx); */
@@ -1466,10 +1477,6 @@ textarea.form-input::-webkit-resizer {
   border-radius: 8px;
   /* border: 1px solid var(--light-gray-70); */
   border: none;
-}
-.project-details-btn svg {
-  width: 27px;
-  height: 27px;
 }
 
 .project-details-btn:hover {
@@ -1494,6 +1501,33 @@ textarea.form-input::-webkit-resizer {
   font-size: var(--fs-6);
   color: var(--orange-yellow-crayola);
 }
+
+/* Footer style */
+main {
+  margin-bottom: 60px;
+}
+footer {
+  /* left and right are same of the main + 13px */
+  margin: 0 25px;
+  /* hight of the nav */
+  margin-bottom: 63px;
+}
+
+.copyright {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  border-top: 1px solid var(--jet);
+  color: var(--light-gray-70);
+  min-width: 259px;
+
+  padding-top: 15px;
+  padding-bottom: 30px;
+  /* max-width of main - 13px - 5px */
+  max-width: 1182px;
+}
+
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
@@ -1516,6 +1550,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .project-img,
+  .project-img.my,
   .blog-banner-box {
     height: auto;
   }
@@ -1860,16 +1895,41 @@ textarea.form-input::-webkit-resizer {
 
   /* projects modal */
   .my-modal {
-    max-width: 620px;
+    /* max width with an image */
+    /* max-width: 620px; */
+    /* max width without an image */
+    max-width: 830px;
+    padding: 20px;
   }
-  .project-img.my img {
-    max-height: 350px;
+
+  /* Change tools */
+  .about-tools {
+    margin-top: -13px;
   }
+  .about-tools .tool {
+    font-size: 16px;
+    padding: 12px 22px;
+    margin-top: 13px;
+    margin-right: 13px;
+  }
+
   .form-btn.link-fill ion-icon,
   .form-btn.link-out ion-icon {
     /* stroke-width: 50px; */
     --ionicon-stroke-width: 50px;
     font-size: 20px;
+  }
+
+  footer {
+    margin-left: 43px;
+    margin-right: 43px;
+  }
+  main {
+    margin-bottom: 60px;
+  }
+
+  .copyright {
+    padding-top: 20px;
   }
 }
 
@@ -1989,6 +2049,9 @@ textarea.form-input::-webkit-resizer {
     width: 160px;
     margin-left: 0;
   }
+  .project-img.my {
+    height: 350px;
+  }
 
   /* form btn with success message */
   .submit-container {
@@ -1999,6 +2062,16 @@ textarea.form-input::-webkit-resizer {
   }
   .submit-container .form-btn {
     margin-left: 0;
+  }
+
+  .project-img {
+    /* average height of the projects images */
+    height: 150px;
+  }
+
+  footer {
+    margin-left: 47px;
+    margin-right: 47px;
   }
 }
 
@@ -2113,6 +2186,12 @@ textarea.form-input::-webkit-resizer {
   /* Resume btn */
   .form-btn.resume-download {
     top: 125px;
+  }
+
+  footer {
+    margin-left: 47px;
+    margin-right: 47px;
+    margin-bottom: 0;
   }
 }
 
@@ -2252,50 +2331,14 @@ textarea.form-input::-webkit-resizer {
   .timeline-container {
     max-width: 700px;
   }
-}
 
-/* *********************************** */
-/* .project-details-btn2 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  .project-img {
+    /* average height of the projects images */
+    height: 142px;
+  }
 
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-  color: var(--white-2);
+  footer {
+    margin-left: 37px;
+    margin-right: 37px;
+  }
 }
-.project-details-btn2 svg {
-  width: 28px;
-  height: 28px;
-} */
-
-/* ********************************* */
-/* old implementation for modal */
-.my-modal.active .testimonials-modal {
-  /* transform: scale(1);
-  opacity: 1; */
-}
-/* modal for projects */
-.testimonials-modal.my {
-  /* padding-top: 62px; */
-  /* margin: 15px 0px; */
-}
-
-.modal-container.my {
-  display: block;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%; */
-}
-.overlay.my {
-  z-index: 6;
-  /* background: #fff; */
-  /* position: fixed; */
-}
-/* ********************************* */

@@ -1,8 +1,9 @@
 'use strict';
 
 // My projects data
-const ecommerceProject = {
-  name: 'Ecommerce Website',
+const ecommerce = {
+  name: 'ecommerce',
+  title: 'Ecommerce Website',
   type: 'Website',
   date: 'May 2022',
   description: [
@@ -21,9 +22,10 @@ const ecommerceProject = {
   liveLink: '',
   codeLink: '',
 };
-const project1 = {
-  name: 'Omnifood Webpage',
-  type: 'Responsive Webpage',
+const omnifood = {
+  name: 'omnifood',
+  title: 'Omnifood Webpage',
+  type: 'Responsive webpage',
   date: 'Nov 2023',
   description: [
     // First one is a longer short description with
@@ -39,15 +41,16 @@ const project1 = {
     'Debugged and optimized the webpage according to accessibility, image dimensions.',
     'Verified that the website functions seamlessly across all major browsers.',
   ],
-  image: '',
+  image: 'omnifood.jpg',
   tools: ['HTML', 'CSS', 'JavaScript', 'GIT'],
   liveLink: 'https://omnifood-tayseer.netlify.app/',
   codeLink: 'https://github.com/ahmedtayseer303/Omnifood-Project',
 };
 
-const project2 = {
-  name: 'Matpy Application',
-  type: 'JavaScript Application',
+const mapty = {
+  name: 'mapty',
+  title: 'Matpy Application',
+  type: 'JavaScript application',
   date: 'Dec 2023',
   description: [
     "An application for logging workouts, allowing users to track their exercises and visualize them on a map. The app stores workout data locally for each user in the browser's local storage.",
@@ -61,15 +64,16 @@ const project2 = {
     'Implemented the architecture using OOP.',
     'Used map as 3rd party package.',
   ],
-  image: '',
+  image: 'mapty.jpg',
   tools: ['HTML', 'CSS', 'JavaScript', 'NPM', 'OOP', '3rd party (map)'],
   liveLink: 'https://matpy-tayseer.netlify.app/',
   codeLink: 'https://github.com/ahmedtayseer303/Matpy-Project',
 };
 
-const project3 = {
-  name: 'Forkify Application',
-  type: 'JavaScript Application',
+const forkify = {
+  name: 'forkify',
+  title: 'Forkify Application',
+  type: 'JavaScript application',
   date: 'Jan 2024',
   description: [
     'A recipe application that allows users to search for recipes, bookmark their favorites, and even upload their own recipes while ensuring all their data is securely stored.',
@@ -83,12 +87,52 @@ const project3 = {
     'Fetched needed data from online API.',
     'Used Parcel bundler for transpiling, polyfilling and dead code.',
   ],
-  image: '',
+  image: 'forkify.jpg',
   tools: ['HTML', 'CSS', 'JavaScript', 'NPM', 'MVC', 'OOP', 'APIs', 'Bundler'],
-  liveLink: 'https://forkify-v2.netlify.app/',
+  liveLink: 'https://forkify-tayseer.netlify.app/',
   codeLink: 'https://github.com/ahmedtayseer303/forkify-project',
 };
+const projects = { forkify, mapty, omnifood };
 
+//////////////////////////////////////////////////
+// Fill portfolio from data
+const projectsContainer = document.querySelector('[data-projects-container]');
+const generateProjectMarkup = function (project) {
+  return `
+    <li
+      class="project-item active"
+      data-filter-item
+      data-category="${project.type}"
+    >
+      <a href="${project.liveLink}" target="_blank">
+        <figure class="project-img">
+          <div class="project-item-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+
+          <img
+            src="./assets/images/${project.image}"
+            alt="finance"
+            loading="lazy"
+          />
+        </figure>
+
+        <h3 class="project-title">${project.title}</h3>
+
+        <p class="project-category">${project.type}</p>
+      </a>
+
+      <button class="project-details-btn" data-project-name="${project.name}">
+        <ion-icon name="list-outline"></ion-icon>
+      </button>
+    </li>
+  `;
+};
+projectsContainer.innerHTML = Object.values(projects)
+  .map(prj => generateProjectMarkup(prj))
+  .join('');
+
+//////////////////////////////////////////////////
 // element toggle function
 const elementToggleFunc = function (elem) {
   elem.classList.toggle('active');
@@ -103,42 +147,42 @@ sidebarBtn.addEventListener('click', function () {
   elementToggleFunc(sidebar);
 });
 
-// testimonials variables
-const testimonialsItem = document.querySelectorAll('[data-testimonials-item]');
-const modalContainer = document.querySelector('[data-modal-container]');
-const modalCloseBtn = document.querySelector('[data-modal-close-btn]');
-const overlay = document.querySelector('[data-overlay]');
+// // testimonials variables
+// const testimonialsItem = document.querySelectorAll('[data-testimonials-item]');
+// const modalContainer = document.querySelector('[data-modal-container]');
+// const modalCloseBtn = document.querySelector('[data-modal-close-btn]');
+// const overlay = document.querySelector('[data-overlay]');
 
-// modal variable
-const modalImg = document.querySelector('[data-modal-img]');
-const modalTitle = document.querySelector('[data-modal-title]');
-const modalText = document.querySelector('[data-modal-text]');
+// // modal variable
+// const modalImg = document.querySelector('[data-modal-img]');
+// const modalTitle = document.querySelector('[data-modal-title]');
+// const modalText = document.querySelector('[data-modal-text]');
 
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle('active');
-  overlay.classList.toggle('active');
-};
+// // modal toggle function
+// const testimonialsModalFunc = function () {
+//   modalContainer.classList.toggle('active');
+//   overlay.classList.toggle('active');
+// };
 
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-  testimonialsItem[i].addEventListener('click', function () {
-    modalImg.src = this.querySelector('[data-testimonials-avatar]').src;
-    modalImg.alt = this.querySelector('[data-testimonials-avatar]').alt;
-    modalTitle.innerHTML = this.querySelector(
-      '[data-testimonials-title]'
-    ).innerHTML;
-    modalText.innerHTML = this.querySelector(
-      '[data-testimonials-text]'
-    ).innerHTML;
+// // add click event to all modal items
+// for (let i = 0; i < testimonialsItem.length; i++) {
+//   testimonialsItem[i].addEventListener('click', function () {
+//     modalImg.src = this.querySelector('[data-testimonials-avatar]').src;
+//     modalImg.alt = this.querySelector('[data-testimonials-avatar]').alt;
+//     modalTitle.innerHTML = this.querySelector(
+//       '[data-testimonials-title]'
+//     ).innerHTML;
+//     modalText.innerHTML = this.querySelector(
+//       '[data-testimonials-text]'
+//     ).innerHTML;
 
-    testimonialsModalFunc();
-  });
-}
+//     testimonialsModalFunc();
+//   });
+// }
 
-// add click event to modal close button
-modalCloseBtn.addEventListener('click', testimonialsModalFunc);
-overlay.addEventListener('click', testimonialsModalFunc);
+// // add click event to modal close button
+// modalCloseBtn.addEventListener('click', testimonialsModalFunc);
+// overlay.addEventListener('click', testimonialsModalFunc);
 
 // custom select variables
 const select = document.querySelector('[data-select]');
@@ -153,7 +197,8 @@ select.addEventListener('click', function () {
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener('click', function () {
-    let selectedValue = this.innerText.toLowerCase();
+    // let selectedValue = this.innerText.toLowerCase();
+    let selectedValue = this.innerText;
     selectValue.innerText = this.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
@@ -165,7 +210,7 @@ const filterItems = document.querySelectorAll('[data-filter-item]');
 
 const filterFunc = function (selectedValue) {
   for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === 'all') {
+    if (selectedValue === 'All') {
       filterItems[i].classList.add('active');
     } else if (selectedValue === filterItems[i].dataset.category) {
       filterItems[i].classList.add('active');
@@ -180,7 +225,8 @@ let lastClickedBtn = filterBtn[0];
 
 for (let i = 0; i < filterBtn.length; i++) {
   filterBtn[i].addEventListener('click', function () {
-    let selectedValue = this.innerText.toLowerCase();
+    // let selectedValue = this.innerText.toLowerCase();
+    let selectedValue = this.innerText;
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
 
@@ -228,30 +274,59 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 /////////////////////////////////////
 // Open project modal
-
-const projectsContainer = document.querySelector('[data-projects-container]');
-const modalProjectsContainer = document.querySelector('.my-modal');
 const overlayProjects = document.querySelector('.overlay.my');
+const modalProjects = document.querySelector('.my-modal');
 
-const modalProjectsCloseBtn = modalProjectsContainer.querySelector(
+const modalProjectsCloseBtn = modalProjects.querySelector(
   '[data-modal-close-btn]'
 );
 
+// modal data to be filled
+const projectName = modalProjects.querySelector('.article-title');
+const projectImg = modalProjects.querySelector('img');
+const projectDate = modalProjects.querySelector('time');
+const projectDescription = modalProjects.querySelector('.project-description');
+const projecttools = modalProjects.querySelector('.tools');
+const projectLiveLink = modalProjects.querySelector('.link-fill');
+const projectCodeLink = modalProjects.querySelector('.link-out');
+
 // modal toggle function
 const projectsModalFunc = function () {
-  modalProjectsContainer.classList.toggle('active');
+  modalProjects.classList.toggle('active');
   overlayProjects.classList.toggle('active');
 };
 
-modalProjectsCloseBtn.addEventListener('click', projectsModalFunc);
-overlayProjects.addEventListener('click', projectsModalFunc);
+// modalProjectsCloseBtn.addEventListener('click', projectsModalFunc);
+modalProjectsCloseBtn.addEventListener('click', function (e) {
+  console.log(this);
+  projectsModalFunc();
+});
 
+// overlayProjects.addEventListener('click', projectsModalFunc);
+overlayProjects.addEventListener('click', function (e) {
+  console.log(this);
+  projectsModalFunc();
+});
+
+// listen event for open project modal
 projectsContainer.addEventListener('click', function (e) {
-  const project = e.target.closest('[data-details-btn]');
-  if (!project) return;
-
+  const btn = e.target.closest('[data-project-name]');
+  if (!btn) return;
+  const project = projects[btn.dataset.projectName];
+  projectName.innerHTML = project.title;
+  projectImg.src = `./assets/images/${project.image}`;
+  projectDate.innerHTML = project.date;
+  projectDescription.innerHTML = project.description
+    .map(des => `<p>${des}</p>`)
+    .join('');
+  projecttools.innerHTML = project.tools
+    .map(tool => `<div class="tool">${tool}</div>`)
+    .join('');
+  projectLiveLink.href = project.liveLink;
+  projectCodeLink.href = project.codeLink;
   // open modal
   projectsModalFunc();
+  console.log('container - entered');
 });
 /////////////////////////////////////
 // Contact form submition
@@ -291,14 +366,6 @@ form.addEventListener('submit', e => {
 });
 /////////////////////////////////////
 // for development
-// setTimeout(() => {
-//   formMessage.style.display = 'block';
-// }, 2000);
-
-// formMessage.style.display = 'block';
-// formMessage.innerHTML = '✔ Thank you! Your message has been sent successfully.';
-navigationLinks.forEach(btn => {
-  if (btn.innerText.toLowerCase() === 'resume') btn.click();
-});
-// modalProjectsContainer.classList.toggle('active');
-// overlayProjects.classList.toggle('active');
+s// navigationLinks.forEach(btn => {
+//   if (btn.innerText.toLowerCase() === 'portfolio') btn.click();
+// });

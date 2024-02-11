@@ -43,7 +43,6 @@
 
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
-          <!-- TODO -->
           <figure class="avatar-box">
             <img
               src="./assets/images/my-avatar.png"
@@ -124,23 +123,34 @@
 
           <div class="separator"></div>
 
-          <!-- TODO -->
           <ul class="social-list">
             <li class="social-item">
-              <a href="#" class="social-link">
+              <a
+                href="https://www.linkedin.com/in/ahmedtayseer/"
+                target="_blank"
+                class="social-link"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a
+                href="https://github.com/ahmedtayseer303"
+                target="_blank"
+                class="social-link"
+              >
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a
+                href="https://www.facebook.com/ahmedtayseer93/"
+                target="_blank"
+                class="social-link"
+              >
                 <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li class="social-item">
-              <a href="#" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
           </ul>
@@ -254,11 +264,34 @@
           </section>
 
           <!--
+          - technologies
+        -->
+
+          <section class="technologies">
+            <h3 class="h3 service-title">Technologies</h3>
+            <div class="tools about-tools">
+              <div class="tool">HTML</div>
+              <div class="tool">CSS</div>
+              <div class="tool">JavaScript</div>
+              <div class="tool">APIs</div>
+              <div class="tool">OOP</div>
+              <div class="tool">MVC</div>
+              <div class="tool">Bundler</div>
+              <div class="tool">Python</div>
+              <div class="tool">Flask</div>
+              <div class="tool">SQL</div>
+              <div class="tool">MySQL</div>
+              <div class="tool">MongoDB</div>
+              <div class="tool">GIT</div>
+            </div>
+          </section>
+
+          <!--
           - testimonials
         -->
 
-          <!-- TODO -->
-          <section class="testimonials">
+          <!-- If needed -->
+          <!-- <section class="testimonials">
             <h3 class="h3 testimonials-title">Testimonials</h3>
 
             <ul class="testimonials-list has-scrollbar">
@@ -292,45 +325,14 @@
                   </div>
                 </div>
               </li>
-
-              <li class="testimonials-item">
-                <div class="content-card" data-testimonials-item>
-                  <figure class="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-2.png"
-                      alt="Jessica miller"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    class="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Jessica miller
-                  </h4>
-
-                  <div class="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li>
             </ul>
-          </section>
+          </section> -->
 
           <!--
           - testimonials modal
         -->
 
-          <div class="modal-container" data-modal-container>
+          <!-- <div class="modal-container" data-modal-container>
             <div class="overlay" data-overlay></div>
 
             <section class="testimonials-modal">
@@ -368,7 +370,7 @@
                 </div>
               </div>
             </section>
-          </div>
+          </div> -->
 
           <!--
           - clients
@@ -582,17 +584,6 @@
 
               <li class="skills-item">
                 <div class="title-wrapper">
-                  <h5 class="h5">C++</h5>
-                  <data value="65">65%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 65%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
                   <h5 class="h5">Problem solving</h5>
                   <data value="75">75%</data>
                 </div>
@@ -621,15 +612,11 @@
               </li>
 
               <li class="filter-item">
-                <button data-filter-btn>Web design</button>
+                <button data-filter-btn>JavaScript application</button>
               </li>
 
               <li class="filter-item">
-                <button data-filter-btn>Applications</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Web development</button>
+                <button data-filter-btn>Responsive webpage</button>
               </li>
             </ul>
 
@@ -650,24 +637,20 @@
                 </li>
 
                 <li class="select-item">
-                  <button data-select-item>Web design</button>
+                  <button data-select-item>JavaScript application</button>
                 </li>
 
                 <li class="select-item">
-                  <button data-select-item>Applications</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Web development</button>
+                  <button data-select-item>Responsive webpage</button>
                 </li>
               </ul>
             </div>
 
             <ul class="project-list" data-projects-container>
-              <li
+              <!-- <li
                 class="project-item active"
                 data-filter-item
-                data-category="web development"
+                data-category="javascript application"
               >
                 <a href="#">
                   <figure class="project-img">
@@ -687,232 +670,10 @@
                   <p class="project-category">Web development</p>
                 </a>
 
-                <button class="project-details-btn" data-details-btn>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                    />
-                  </svg>
+                <button class="project-details-btn" data-project-name="forkify">
+                  <ion-icon name="list-outline"></ion-icon>
                 </button>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-2.png"
-                      alt="orizon"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Orizon</h3>
-
-                  <p class="project-category">Web development</p>
-                </a>
-
-                <button class="project-details-btn" data-details-btn>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                    />
-                  </svg>
-                </button>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-3.jpg"
-                      alt="fundo"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Fundo</h3>
-
-                  <p class="project-category">Web design</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="applications"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-4.png"
-                      alt="brawlhalla"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Brawlhalla</h3>
-
-                  <p class="project-category">Applications</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-5.png"
-                      alt="dsm."
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">DSM.</h3>
-
-                  <p class="project-category">Web design</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web design"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-6.png"
-                      alt="metaspark"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">MetaSpark</h3>
-
-                  <p class="project-category">Web design</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-7.png"
-                      alt="summary"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Summary</h3>
-
-                  <p class="project-category">Web development</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="applications"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-8.jpg"
-                      alt="task manager"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Task Manager</h3>
-
-                  <p class="project-category">Applications</p>
-                </a>
-              </li>
-
-              <li
-                class="project-item active"
-                data-filter-item
-                data-category="web development"
-              >
-                <a href="#">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img
-                      src="./assets/images/project-9.png"
-                      alt="arrival"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <h3 class="project-title">Arrival</h3>
-
-                  <p class="project-category">Web development</p>
-                </a>
-              </li>
+              </li> -->
             </ul>
           </section>
         </article>
@@ -988,64 +749,33 @@
         -->
 
       <div class="overlay my" data-overlay></div>
-      <!-- <div class="modal-container my" data-modal-container> -->
       <div class="my-modal" data-modal-container>
-        <!-- <section class="testimonials-modal my"> -->
         <h4 class="h2 article-title">Project Name</h4>
 
         <button class="modal-close-btn" data-modal-close-btn>
           <ion-icon name="close-outline"></ion-icon>
         </button>
 
-        <!-- <div class="modal-img-wrapper"> -->
         <figure class="project-img my">
-          <img
-            src="./assets/images/project-2.png"
-            alt="arrival"
-            loading="lazy"
-          />
+          <img src="./assets/images/forkify.jpg" alt="arrival" loading="lazy" />
         </figure>
-
-        <!-- <img src="./assets/images/icon-quote.svg" alt="quote icon" /> -->
-        <!-- </div> -->
 
         <div class="modal-content">
           <h4 class="h3 modal-title">Project Overview</h4>
-          <time datetime="2021-06-14">June 2021</time>
+          <time>June 2021</time>
 
           <div class="project-content">
             <div class="project-description">
-              <p>Richard was hired to create a corporate identity. We were</p>
+              <!-- <p>Richard was hired to create a corporate identity. We were</p>
               <ul class="timeline-text-list">
-                <!-- prettier-ignore -->
                 <li>Planned the project by making user stories, features &
                     flowchart.</li>
-
-                <!-- prettier-ignore -->
-                <li>Implemented with MVC architecture using
-                    modules, classes, and Publisher Subscriber Pattern.</li>
-
-                <li>Fetched needed data from online API.</li>
-
-                <!-- prettier-ignore -->
-                <li>Used Parcel bundler for transpiling, polyfilling and dead code.</li>
-              </ul>
+              </ul> -->
             </div>
             <div class="project-tools">
               <h4 class="h3 modal-title">Tools Used</h4>
-              <div class="tools">
-                <div class="tool">HTML</div>
-                <div class="tool">CSS</div>
-                <div class="tool">JavaScript</div>
-                <div class="tool">React</div>
-                <div class="tool">SASS</div>
-                <div class="tool">GIT</div>
-                <div class="tool">Shopify</div>
-                <div class="tool">Wordpress</div>
-                <div class="tool">Google ADS</div>
-                <div class="tool">Facebook Ads</div>
-                <div class="tool">Android</div>
-                <div class="tool">IOS</div>
+              <div class="tools project-tools">
+                <!-- <div class="tool">HTML</div> -->
               </div>
             </div>
             <div class="product-links">
@@ -1067,6 +797,10 @@
       </div>
     </main>
 
+    <!-- <div class="separator"></div> -->
+    <footer>
+      <div class="copyright">Copyright &copy; 2022 codewithsadee</div>
+    </footer>
     <!--
     - custom js link
   -->
