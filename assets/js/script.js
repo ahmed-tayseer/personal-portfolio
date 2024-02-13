@@ -296,17 +296,8 @@ const projectsModalFunc = function () {
   overlayProjects.classList.toggle('active');
 };
 
-// modalProjectsCloseBtn.addEventListener('click', projectsModalFunc);
-modalProjectsCloseBtn.addEventListener('click', function (e) {
-  console.log(this);
-  projectsModalFunc();
-});
-
-// overlayProjects.addEventListener('click', projectsModalFunc);
-overlayProjects.addEventListener('click', function (e) {
-  console.log(this);
-  projectsModalFunc();
-});
+modalProjectsCloseBtn.addEventListener('click', projectsModalFunc);
+overlayProjects.addEventListener('click', projectsModalFunc);
 
 // listen event for open project modal
 projectsContainer.addEventListener('click', function (e) {
@@ -324,9 +315,9 @@ projectsContainer.addEventListener('click', function (e) {
     .join('');
   projectLiveLink.href = project.liveLink;
   projectCodeLink.href = project.codeLink;
+
   // open modal
   projectsModalFunc();
-  console.log('container - entered');
 });
 /////////////////////////////////////
 // Contact form submition
@@ -346,12 +337,21 @@ const scriptURL =
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+
+  // Make date input
   formDate.value = new Intl.DateTimeFormat('en-US', options).format(new Date());
+
+  // Show message for the process
   formMessage.style.display = 'block';
-  formMessage.innerHTML = 'Sending the message...';
+  formMessage.innerHTML = 'Sending the message. Please wait...';
+
+  // Disaple btn after sending
+  formBtn.setAttribute('disabled', '');
+
+  // Send message
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then(response => {
-      formMessage.innerHTML = '✔ Thank you! Message sent successfully.';
+      formMessage.innerHTML = '✔ Thank you for your message!';
     })
     .catch(error => {
       formMessage.innerHTML =
@@ -366,6 +366,6 @@ form.addEventListener('submit', e => {
 });
 /////////////////////////////////////
 // for development
-s// navigationLinks.forEach(btn => {
-//   if (btn.innerText.toLowerCase() === 'portfolio') btn.click();
+// navigationLinks.forEach(btn => {
+//   if (btn.innerText.toLowerCase() === 'contact') btn.click();
 // });

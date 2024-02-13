@@ -993,7 +993,7 @@ main {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   width: 100%;
   padding: 8px 10px;
   border-radius: 8px;
