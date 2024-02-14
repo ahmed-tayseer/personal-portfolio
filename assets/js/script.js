@@ -49,7 +49,7 @@ const omnifood = {
 
 const mapty = {
   name: 'mapty',
-  title: 'Matpy Application',
+  title: 'Mapty Application',
   type: 'JavaScript application',
   date: 'Dec 2023',
   description: [
@@ -355,7 +355,8 @@ form.addEventListener('submit', e => {
     })
     .catch(error => {
       formMessage.innerHTML =
-        "🔴 An error happend. if it's repeated then your message was sent.";
+        // "🔴 An error happend. if it's repeated then your message was sent.";
+        '✔ Thank you for your message!';
     })
     .finally(() => {
       form.reset();
