@@ -17,10 +17,10 @@ const ecommerce = {
     'Debugged and optimized the webpage according to accessibility, image dimensions.',
     'Verified that the website functions seamlessly across all major browsers.',
   ],
-  image: '',
+  image: 'ecommerce.png',
   tools: ['HTML', 'CSS', 'JavaScript', 'Flask', 'SQL', 'MySQL', 'GIT'],
-  liveLink: '',
-  codeLink: '',
+  liveLink: 'https://github.com/ahmedtayseer303/Ecommerce_website/tree/main/website-demo-images',
+  codeLink: 'https://github.com/ahmedtayseer303/Ecommerce_website',
 };
 const omnifood = {
   name: 'omnifood',
@@ -92,7 +92,7 @@ const forkify = {
   liveLink: 'https://forkify-tayseer.netlify.app/',
   codeLink: 'https://github.com/ahmedtayseer303/forkify-project',
 };
-const projects = { forkify, mapty, omnifood };
+const projects = { forkify, mapty, omnifood, ecommerce };
 
 //////////////////////////////////////////////////
 // Fill portfolio from data
