@@ -4,7 +4,7 @@
 const ecommerce = {
   name: 'ecommerce',
   title: 'Ecommerce Website',
-  type: 'Website',
+  type: 'Flask app',
   date: 'May 2022',
   description: [
     'I conceptualized, designed, and developed an eCommerce website with user accounts for both customers and merchants. Customers can browse, purchase, add items to the cart, and view their purchase history. Merchants have the capability to showcase and edit their products, as well as monitor their earnings.',
@@ -19,7 +19,8 @@ const ecommerce = {
   ],
   image: 'ecommerce.png',
   tools: ['HTML', 'CSS', 'JavaScript', 'Flask', 'SQL', 'MySQL', 'GIT'],
-  liveLink: 'https://github.com/ahmedtayseer303/Ecommerce_website/tree/main/website-demo-images',
+  liveLink:
+    'https://github.com/ahmedtayseer303/Ecommerce_website/tree/main/website-demo-images',
   codeLink: 'https://github.com/ahmedtayseer303/Ecommerce_website',
 };
 const omnifood = {
@@ -92,7 +93,75 @@ const forkify = {
   liveLink: 'https://forkify-tayseer.netlify.app/',
   codeLink: 'https://github.com/ahmedtayseer303/forkify-project',
 };
-const projects = { forkify, mapty, omnifood, ecommerce };
+
+const shop = {
+  name: 'shop',
+  title: 'Shop Website',
+  type: 'Nodejs application',
+  date: 'Mar 2024',
+  description: [
+    'Developed a comprehensive e-commerce platform designed for seamless order management and product uploads. Utilized MongoDB to design and implement a robust database structure, ensuring efficient data storage and retrieval.',
+    'Implemented a wide range of features including user authentication, robust security measures against CSRF attacks, secure file uploads, data validation, and pagination for enhanced user experience.',
+    'Integrated Stripe payment gateway to facilitate streamlined payment processing.',
+  ],
+  shortDescription: 'Shop website for making orders and uploading products',
+  bullets: [
+    'Implemented website with template engines using MVC architecture',
+    'Designed the DB and implemented using Mongodb',
+    'Added many features like Authentication, Avoiding CSRF attacks, File uploads, validation and pagination.',
+    'Added payments using stripe.',
+  ],
+  image: 'shop.jpg',
+  tools: [
+    'NodeJs',
+    'ExpressJs',
+    'Session',
+    'Stripe',
+    'ejs',
+    'HTML',
+    'JavaScript',
+    'NPM',
+    'MVC',
+  ],
+  liveLink: 'https://shop-nodejs-website.onrender.com',
+  codeLink: 'https://github.com/ahmedtayseer303/shop-nodejs-website',
+};
+
+const posts = {
+  name: 'posts',
+  title: 'Posts Application',
+  type: 'Nodejs application',
+  date: 'April 2024',
+  description: [
+    'Developed a versatile REST API application tailored for efficient management of user-generated content. Leveraged the REST architectural style to design and implement a scalable and robust backend system.',
+    'Designed and implemented a MongoDB database schema to seamlessly store and retrieve user posts and associated data.',
+    'Implemented a myriad of features including user authentication utilizing JSON Web Tokens (JWT), real-time communication through Web Sockets, secure file uploads, data validation, and pagination for enhanced performance.',
+    'Seamlessly integrated the API with a React frontend application to provide users with a seamless and intuitive browsing experience.',
+  ],
+  shortDescription: "Posts REST API app for managing users' posts",
+  bullets: [
+    'Implemented the app using REST API and Graphql',
+    'Designed the DB and implemented using Mongodb',
+    'Added many features like Authentication with JWT, Web Sockets, File uploads, validation and pagination.',
+    'Integrated the API and Graphql with a React App.',
+  ],
+  image: 'posts.jpg',
+  tools: [
+    'NodeJs',
+    'ExpressJs',
+    'Web Sockets',
+    'JWT',
+    'HTML',
+    'JavaScript',
+    'NPM',
+    'REST-APIs',
+    'Graphql',
+  ],
+  liveLink: 'https://posts-tayseer.onrender.com',
+  codeLink: 'https://github.com/ahmedtayseer303/posts-nodejs-REST-APIs',
+};
+
+const projects = { posts, shop, forkify, mapty, omnifood, ecommerce };
 
 //////////////////////////////////////////////////
 // Fill portfolio from data
@@ -131,6 +200,38 @@ const generateProjectMarkup = function (project) {
 projectsContainer.innerHTML = Object.values(projects)
   .map(prj => generateProjectMarkup(prj))
   .join('');
+
+//////////////////////////////////////////////////
+// fill Resume from data
+const resumeProjectsContainer = document.querySelector(
+  '[resume-projects-container]'
+);
+const generateResumeMarkup = function (project) {
+  return `
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">${project.title}</h4>
+
+      <span>${project.date}</span>
+      <div class="timeline-container">
+        <p class="timeline-text">
+          ${project.shortDescription}
+        </p>
+        <ul class="timeline-text-list">
+            ${project.bullets.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      </div>
+    </li>
+  `;
+};
+
+const resumeProjects = { posts, shop, forkify, ecommerce };
+const html = Object.values(resumeProjects)
+  .map(prj => generateResumeMarkup(prj))
+  .join('');
+resumeProjectsContainer.insertAdjacentHTML('afterbegin', html);
+// resumeProjectsContainer.innerHTML = Object.values(projects)
+//   .map(prj => generateResumeMarkup(prj))
+//   .join('');
 
 //////////////////////////////////////////////////
 // element toggle function
