@@ -12,10 +12,9 @@ const ecommerce = {
   ],
   shortDescription: '',
   bullets: [
-    'Planned, designed and built the webpage.',
-    'Resulting in a responsive design achieved through a desktop-first development approach.',
-    'Debugged and optimized the webpage according to accessibility, image dimensions.',
-    'Verified that the website functions seamlessly across all major browsers.',
+    'Designed the flowchart and user interfaces.',
+    'Designed the ERD for the database and implemented using MySQL.',
+    'Implemented and testing each module in the backend using Flask.',
   ],
   image: 'ecommerce.png',
   tools: ['HTML', 'CSS', 'JavaScript', 'Flask', 'SQL', 'MySQL', 'GIT'],
@@ -469,5 +468,5 @@ form.addEventListener('submit', e => {
 /////////////////////////////////////
 // for development
 // navigationLinks.forEach(btn => {
-//   if (btn.innerText.toLowerCase() === 'contact') btn.click();
+//   if (btn.innerText.toLowerCase() === 'portfolio') btn.click();
 // });
