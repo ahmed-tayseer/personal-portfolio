@@ -350,7 +350,9 @@ main {
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .info-content .name {
@@ -1640,7 +1642,9 @@ footer {
   }
 
   .avatar-box {
-    border-radius: 30px;
+    /* border-radius: 30px; */
+    border-radius: 50%;
+    overflow: hidden;
   }
 
   .avatar-box img {
