@@ -80,12 +80,12 @@ const forkify = {
     'To begin, I meticulously planned the project by defining user stories, outlining features, and creating a flowchart to guide development. The application was implemented using the Model-View-Controller (MVC) architecture, employing modules, classes, and the Publisher-Subscriber Pattern to organize and manage the codebase effectively.',
     "For data retrieval, I integrated an online API to fetch the necessary recipe information. Additionally, I utilized the Parcel bundler to transpile, polyfill, and eliminate dead code, optimizing the application's performance and ensuring compatibility across different environments.",
   ],
-  shortDescription: 'Recipe application with custom recipe uploads.',
+  shortDescription:
+    'Created a recipe application allowing users to upload custom recipes.',
   bullets: [
-    'Planned the project by making user stories, features & flowchart.',
-    'Implemented with MVC architecture using modules, classes, and Publisher Subscriber Pattern.',
-    'Fetched needed data from online API.',
-    'Used Parcel bundler for transpiling, polyfilling and dead code.',
+    'Planned the project using user stories, feature analysis, and flowcharts.',
+    'Built the app using modular architecture, classes, and object-oriented programming.',
+    'Fetched recipe data from an external API.',
   ],
   image: 'forkify.jpg',
   tools: ['HTML', 'CSS', 'JavaScript', 'NPM', 'MVC', 'OOP', 'APIs', 'Bundler'],
@@ -105,10 +105,9 @@ const shop = {
   ],
   shortDescription: 'Shop website for making orders and uploading products',
   bullets: [
-    'Implemented website with template engines using MVC architecture',
-    'Designed the DB and implemented using Mongodb',
-    'Added many features like Authentication, Avoiding CSRF attacks, File uploads, validation and pagination.',
-    'Added payments using stripe.',
+    'Developed a shop website using the MVC architecture and template engines.',
+    'Designed and implemented the database using MongoDB.',
+    'Added features like authentication (sessions), CSRF attack prevention, file uploads, payment integration (Stripe), validation, and pagination.',
   ],
   image: 'shop.jpg',
   tools: [
@@ -137,12 +136,12 @@ const posts = {
     'Implemented a myriad of features including user authentication utilizing JSON Web Tokens (JWT), real-time communication through Web Sockets, secure file uploads, data validation, and pagination for enhanced performance.',
     'Seamlessly integrated the API with a React frontend application to provide users with a seamless and intuitive browsing experience.',
   ],
-  shortDescription: "Posts REST API app for managing users' posts",
+  shortDescription: "Built a REST API app for managing users' posts.",
   bullets: [
     'Implemented the app using REST API and Graphql',
-    'Designed the DB and implemented using Mongodb',
-    'Added many features like Authentication with JWT, Web Sockets, File uploads, validation and pagination.',
-    'Integrated the API and Graphql with a React App.',
+    'Designed and implemented a MongoDB database.',
+    'Added features like authentication using JWT, WebSockets, file uploads, validation, and pagination.',
+    'Integrated the API and GraphQL queries/mutations with a React frontend.',
   ],
   image: 'posts.jpg',
   tools: [
@@ -224,7 +223,8 @@ const generateResumeMarkup = function (project) {
 };
 
 const resumeProjects = { posts, shop, forkify, ecommerce };
-const html = Object.values(resumeProjects)
+// const html = Object.values(resumeProjects)
+const html = Object.values(projects)
   .map(prj => generateResumeMarkup(prj))
   .join('');
 resumeProjectsContainer.insertAdjacentHTML('afterbegin', html);
