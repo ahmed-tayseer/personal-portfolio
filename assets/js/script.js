@@ -252,7 +252,7 @@ const generateResumeMarkup = function (project) {
 };
 
 const resumeWork = { edigits };
-const resumeProjects = { posts, shop, forkify, ecommerce };
+// const resumeProjects = { posts, shop, forkify, ecommerce };
 // const html = Object.values(resumeProjects)
 const projectsHtml = Object.values(projects)
   .map(prj => generateResumeMarkup(prj))
