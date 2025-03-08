@@ -1,5 +1,32 @@
 'use strict';
 
+// My Work data
+const edigits = {
+  name: 'eDigits',
+  title: 'eDigits | NetSuite Technical Consultant',
+  type: 'Work',
+  date: 'December 2024 – Present',
+  // description: [],
+  shortDescription: '',
+  bullets: [
+    'Acquired comprehensive knowledge of SuiteScript and the NetSuite system within one month, enabling the completion of 12 solutions in the first two months.',
+    'Delivered an average of one thoroughly tested, high-quality solution per day, achieving a 95% error-free success rate by adhering to best practices and quality standards.',
+    'Collaborated with technical and functional teams to introduce innovative approaches, resulting in improved efficiency, faster delivery times, and enhanced project outcomes.',
+  ],
+  // image: '',
+  tools: [
+    'JavaScript',
+    'SuiteScript',
+    'OAuth 1.0',
+    'NetSuite',
+    'HTML',
+    'CSS',
+    'SQL',
+  ],
+  // liveLink: '',
+  // codeLink: '',
+};
+
 // My projects data
 const ecommerce = {
   name: 'ecommerce',
@@ -10,11 +37,12 @@ const ecommerce = {
     'I conceptualized, designed, and developed an eCommerce website with user accounts for both customers and merchants. Customers can browse, purchase, add items to the cart, and view their purchase history. Merchants have the capability to showcase and edit their products, as well as monitor their earnings.',
     'Additionally, I designed the flowchart and user interfaces for the website, ensuring a seamless and intuitive user experience. For the database structure, I created an Entity-Relationship Diagram (ERD) and implemented it using MySQL. Finally, I rigorously implemented and tested each backend module using Flask.',
   ],
-  shortDescription: '',
+  shortDescription:
+    'An ecommerce platform for managing product listings and customer orders.',
   bullets: [
-    'Designed the flowchart and user interfaces.',
-    'Designed the ERD for the database and implemented using MySQL.',
-    'Implemented and testing each module in the backend using Flask.',
+    'Designed user flow, UI components, and database Entity Relationship Diagram (ERD).',
+    'Developed and implemented a MySQL database for efficient data storage and retrieval.',
+    'Built backend APIs using Flask, ensuring proper module integration.',
   ],
   image: 'ecommerce.png',
   tools: ['HTML', 'CSS', 'JavaScript', 'Flask', 'SQL', 'MySQL', 'GIT'],
@@ -34,12 +62,11 @@ const omnifood = {
     'Additionally, I meticulously debugged and optimized the webpage, addressing issues related to accessibility and image dimensions to enhance user experience. Finally, I conducted thorough testing to ensure the website functions seamlessly across all major browsers, guaranteeing maximum reach and usability',
   ],
   shortDescription:
-    'Simulation for a marketing page for a company providing healthy diets.',
+    'A responsive marketing webpage for a company offering healthy diet plans.',
   bullets: [
-    'Planned, designed and built the webpage.',
-    'Resulting in a responsive design achieved through a desktop-first development approach.',
-    'Debugged and optimized the webpage according to accessibility, image dimensions.',
-    'Verified that the website functions seamlessly across all major browsers.',
+    'Planned, designed, and developed a responsive website following a desktop-first approach.',
+    'Optimized webpage for accessibility, performance, and SEO by debugging layout issues and optimizing image dimensions.',
+    'Ensured cross-browser compatibility and smooth functionality across major web browsers.',
   ],
   image: 'omnifood.jpg',
   tools: ['HTML', 'CSS', 'JavaScript', 'GIT'],
@@ -58,11 +85,11 @@ const mapty = {
     'For mapping functionality, I integrated a third-party package to provide map visualization features, enhancing the user experience and adding value to the application.',
   ],
   shortDescription:
-    'Log your workouts all in one place and trace them on the map.',
+    'A workout-tracking app that allows users to log activities and visualize them on an interactive map.',
   bullets: [
-    'Planned the project by making user stories, features, & flowchart.',
-    'Implemented the architecture using OOP.',
-    'Used map as 3rd party package.',
+    'Designed user stories, features, and system flowchart for structured development.',
+    'Implemented a modular and scalable architecture using Object-Oriented Programming (OOP).',
+    'Integrated third-party mapping library for interactive location tracking.',
   ],
   image: 'mapty.jpg',
   tools: ['HTML', 'CSS', 'JavaScript', 'NPM', 'OOP', '3rd party (map)'],
@@ -103,7 +130,8 @@ const shop = {
     'Implemented a wide range of features including user authentication, robust security measures against CSRF attacks, secure file uploads, data validation, and pagination for enhanced user experience.',
     'Integrated Stripe payment gateway to facilitate streamlined payment processing.',
   ],
-  shortDescription: 'Shop website for making orders and uploading products',
+  shortDescription:
+    'A shop platform for managing product listings and customer orders.',
   bullets: [
     'Developed a shop website using the MVC architecture and template engines.',
     'Designed and implemented the database using MongoDB.',
@@ -201,6 +229,7 @@ projectsContainer.innerHTML = Object.values(projects)
 
 //////////////////////////////////////////////////
 // fill Resume from data
+const resumeWorkContainer = document.querySelector('[resume-work-container]');
 const resumeProjectsContainer = document.querySelector(
   '[resume-projects-container]'
 );
@@ -222,12 +251,17 @@ const generateResumeMarkup = function (project) {
   `;
 };
 
+const resumeWork = { edigits };
 const resumeProjects = { posts, shop, forkify, ecommerce };
 // const html = Object.values(resumeProjects)
-const html = Object.values(projects)
+const projectsHtml = Object.values(projects)
   .map(prj => generateResumeMarkup(prj))
   .join('');
-resumeProjectsContainer.insertAdjacentHTML('afterbegin', html);
+const workHtml = Object.values(resumeWork)
+  .map(prj => generateResumeMarkup(prj))
+  .join('');
+resumeProjectsContainer.insertAdjacentHTML('afterbegin', projectsHtml);
+resumeWorkContainer.insertAdjacentHTML('afterbegin', workHtml);
 // resumeProjectsContainer.innerHTML = Object.values(projects)
 //   .map(prj => generateResumeMarkup(prj))
 //   .join('');
